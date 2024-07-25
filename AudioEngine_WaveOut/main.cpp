@@ -4,11 +4,20 @@
 
 #include "FileSlow.h"
 #include "ThreadWrapper.h"
+#include <conio.h>
+
 using namespace Azul;
 
 int main()
 {
 	START_BANNER_MAIN("-Main-");
+
+	int ch = 0;
+
+	do
+	{
+		ch = _getch_nolock();
+	} while (ch == 0);
 
 	FileThread f;
 	CoordinatorThread c(f);

@@ -17,7 +17,7 @@ CoordinatorThread::CoordinatorThread(FileThread& f)
 
 CoordinatorThread::~CoordinatorThread()
 {
-	if (fFileTransfer.valid())
+	if (fFileTransfer.valid() && fFileTransfer.wait_for(std::chrono::milliseconds(0)) != std::future_status::timeout)
 	{
 		fFileTransfer.get();
 	}

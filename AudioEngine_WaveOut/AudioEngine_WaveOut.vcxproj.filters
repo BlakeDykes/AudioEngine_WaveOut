@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="_Framework">
+      <UniqueIdentifier>{f04c9286-e219-4fb7-b306-f9717e9aba86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_Data">
+      <UniqueIdentifier>{2c008841-b957-4510-87b5-316ee3e6ec39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_FileSlow">
+      <UniqueIdentifier>{0c9fbd9f-7558-46d1-a95c-0b31e65bd715}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_FileSlow\include">
+      <UniqueIdentifier>{f982b529-dc59-4ee5-b122-598539a5930e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_FileSlow\libs">
+      <UniqueIdentifier>{116f9641-f02e-43ec-a345-0cbd0bd4c1d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Thread">
+      <UniqueIdentifier>{cf3a6561-4c08-4f4b-b1fe-4ea07c5e42e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Thread\File">
+      <UniqueIdentifier>{aa86e07b-f6da-4a7a-abeb-8926ed453486}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Queue">
+      <UniqueIdentifier>{86e59285-c7e6-4805-91a2-1b841e302315}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Thread\_Base">
+      <UniqueIdentifier>{538f23fe-e11e-4d10-ab54-f8332df48e2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Thread\_Manager">
+      <UniqueIdentifier>{38b58850-d428-4781-9346-a7469763cf27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Common">
+      <UniqueIdentifier>{80a53c59-da30-40aa-a720-a63f422df8d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Thread\Coordinator">
+      <UniqueIdentifier>{07df6c37-8002-4611-86ab-b9a6be9f86b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Thread\Playback">
+      <UniqueIdentifier>{e78ff0f1-a746-4ef5-aacb-ba6f98bebd4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Queue\Command">
+      <UniqueIdentifier>{a20e8e27-3e4e-4c5f-baf4-c16386d30028}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Thread\Wave">
+      <UniqueIdentifier>{c1af8257-7b6c-41b1-a5b0-d7f2d731f133}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Thread\Wave\Command">
+      <UniqueIdentifier>{22a7ae29-052c-483b-a9f6-29be931083fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Thread\Playback\PlayController">
+      <UniqueIdentifier>{af2ea8d7-1b0b-4f67-8bd8-85fc6311142c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Framework\__DO NOT MODIFY__">
+      <Filter>_Framework</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Framework\Framework.h">
+      <Filter>_Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Framework\ProjectSettings.h">
+      <Filter>_Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Framework\ThreadFramework.h">
+      <Filter>_Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Dist\FileSlow\include\FileSlow.h">
+      <Filter>_FileSlow\include</Filter>
+    </ClInclude>
+    <ClInclude Include="FileThread.h">
+      <Filter>Source Files\Thread\File</Filter>
+    </ClInclude>
+    <ClInclude Include="CircularQueue.h">
+      <Filter>Source Files\Queue</Filter>
+    </ClInclude>
+    <ClInclude Include="QueueCommand.h">
+      <Filter>Source Files\Queue\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="QueueIdentifiers.h">
+      <Filter>Source Files\Queue</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadBase.h">
+      <Filter>Source Files\Thread\_Base</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadManager.h">
+      <Filter>Source Files\Thread\_Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadCount.h">
+      <Filter>Source Files\Thread\_Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="CircularIndex.h">
+      <Filter>Source Files\Queue</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadFlags.h">
+      <Filter>Source Files\Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadWrapper.h">
+      <Filter>Source Files\Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="Buffer.h">
+      <Filter>Source Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="CoordinatorThread.h">
+      <Filter>Source Files\Thread\Coordinator</Filter>
+    </ClInclude>
+    <ClInclude Include="QueuePusher.h">
+      <Filter>Source Files\Queue</Filter>
+    </ClInclude>
+    <ClInclude Include="PlaybackThread.h">
+      <Filter>Source Files\Thread\Playback</Filter>
+    </ClInclude>
+    <ClInclude Include="Wave.h">
+      <Filter>Source Files\Thread\Wave</Filter>
+    </ClInclude>
+    <ClInclude Include="QC_WaveFill.h">
+      <Filter>Source Files\Thread\Wave\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="QC_Callback.h">
+      <Filter>Source Files\Queue\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="WaveTable.h">
+      <Filter>Source Files\Thread\Playback</Filter>
+    </ClInclude>
+    <ClInclude Include="QC_WaveStatusUpdate.h">
+      <Filter>Source Files\Thread\Wave\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="QC_Package.h">
+      <Filter>Source Files\Queue\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayController.h">
+      <Filter>Source Files\Thread\Playback\PlayController</Filter>
+    </ClInclude>
+    <ClInclude Include="PC_Playing.h">
+      <Filter>Source Files\Thread\Playback\PlayController</Filter>
+    </ClInclude>
+    <ClInclude Include="PC_Queue.h">
+      <Filter>Source Files\Thread\Playback\PlayController</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FileThread.cpp">
+      <Filter>Source Files\Thread\File</Filter>
+    </ClCompile>
+    <ClCompile Include="CircularQueue.cpp">
+      <Filter>Source Files\Queue</Filter>
+    </ClCompile>
+    <ClCompile Include="QueueCommand.cpp">
+      <Filter>Source Files\Queue\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadBase.cpp">
+      <Filter>Source Files\Thread\_Base</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadCount.cpp">
+      <Filter>Source Files\Thread\_Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadManager.cpp">
+      <Filter>Source Files\Thread\_Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="CircularIndex.cpp">
+      <Filter>Source Files\Queue</Filter>
+    </ClCompile>
+    <ClCompile Include="Buffer.cpp">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="CoordinatorThread.cpp">
+      <Filter>Source Files\Thread\Coordinator</Filter>
+    </ClCompile>
+    <ClCompile Include="QueueIdentifiers.cpp">
+      <Filter>Source Files\Queue</Filter>
+    </ClCompile>
+    <ClCompile Include="QueuePusher.cpp">
+      <Filter>Source Files\Queue</Filter>
+    </ClCompile>
+    <ClCompile Include="PlaybackThread.cpp">
+      <Filter>Source Files\Thread\Playback</Filter>
+    </ClCompile>
+    <ClCompile Include="Wave.cpp">
+      <Filter>Source Files\Thread\Wave</Filter>
+    </ClCompile>
+    <ClCompile Include="QC_WaveFill.cpp">
+      <Filter>Source Files\Thread\Wave\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="QC_Callback.cpp">
+      <Filter>Source Files\Queue\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="WaveTable.cpp">
+      <Filter>Source Files\Thread\Playback</Filter>
+    </ClCompile>
+    <ClCompile Include="QC_WaveStatusUpdate.cpp">
+      <Filter>Source Files\Thread\Wave\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="QC_Package.cpp">
+      <Filter>Source Files\Queue\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayController.cpp">
+      <Filter>Source Files\Thread\Playback\PlayController</Filter>
+    </ClCompile>
+    <ClCompile Include="PC_Playing.cpp">
+      <Filter>Source Files\Thread\Playback\PlayController</Filter>
+    </ClCompile>
+    <ClCompile Include="PC_Queue.cpp">
+      <Filter>Source Files\Thread\Playback\PlayController</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="..\Data\wave_0.wav">
+      <Filter>_Data</Filter>
+    </Media>
+    <Media Include="..\Data\wave_1.wav">
+      <Filter>_Data</Filter>
+    </Media>
+    <Media Include="..\Data\wave_2.wav">
+      <Filter>_Data</Filter>
+    </Media>
+    <Media Include="..\Data\wave_3.wav">
+      <Filter>_Data</Filter>
+    </Media>
+    <Media Include="..\Data\wave_4.wav">
+      <Filter>_Data</Filter>
+    </Media>
+    <Media Include="..\Data\wave_5.wav">
+      <Filter>_Data</Filter>
+    </Media>
+    <Media Include="..\Data\wave_6.wav">
+      <Filter>_Data</Filter>
+    </Media>
+    <Media Include="..\Data\wave_7.wav">
+      <Filter>_Data</Filter>
+    </Media>
+    <Media Include="..\Data\wave_8.wav">
+      <Filter>_Data</Filter>
+    </Media>
+    <Media Include="..\Data\wave_9.wav">
+      <Filter>_Data</Filter>
+    </Media>
+    <Media Include="..\Data\wave_10.wav">
+      <Filter>_Data</Filter>
+    </Media>
+    <Media Include="..\Data\wave_11.wav">
+      <Filter>_Data</Filter>
+    </Media>
+    <Media Include="..\Data\wave_12.wav">
+      <Filter>_Data</Filter>
+    </Media>
+    <Media Include="..\Data\wave_13.wav">
+      <Filter>_Data</Filter>
+    </Media>
+    <Media Include="..\Data\wave_14.wav">
+      <Filter>_Data</Filter>
+    </Media>
+    <Media Include="..\Data\wave_15.wav">
+      <Filter>_Data</Filter>
+    </Media>
+    <Media Include="..\Data\wave_16.wav">
+      <Filter>_Data</Filter>
+    </Media>
+    <Media Include="..\Data\wave_17.wav">
+      <Filter>_Data</Filter>
+    </Media>
+    <Media Include="..\Data\wave_18.wav">
+      <Filter>_Data</Filter>
+    </Media>
+    <Media Include="..\Data\wave_19.wav">
+      <Filter>_Data</Filter>
+    </Media>
+    <Media Include="..\Data\wave_20.wav">
+      <Filter>_Data</Filter>
+    </Media>
+    <Media Include="..\Data\wave_21.wav">
+      <Filter>_Data</Filter>
+    </Media>
+    <Media Include="..\Data\wave_22.wav">
+      <Filter>_Data</Filter>
+    </Media>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\Dist\FileSlow\lib\FileSlow_DebugX86.lib">
+      <Filter>_FileSlow\libs</Filter>
+    </Library>
+    <Library Include="..\Dist\FileSlow\lib\FileSlow_ReleaseX86.lib">
+      <Filter>_FileSlow\libs</Filter>
+    </Library>
+  </ItemGroup>
+</Project>

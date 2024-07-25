@@ -15,6 +15,22 @@ WaveTable::WaveTable(PlaybackThread* playback, QueuePusher* coordPusher)
 	StatusUpdateFuncs[1] = &WaveTable::SetWaitingForData;
 	StatusUpdateFuncs[2] = &WaveTable::SetWaitingPlay;
 	StatusUpdateFuncs[3] = &WaveTable::SetClosed;
+
+	for (int i = 0; i < NUM_WAVES; ++i)
+	{
+		pWaves[i] = nullptr;
+	}
+}
+
+WaveTable::~WaveTable()
+{
+	delete this->poPlayController;
+
+	for (int i = 0; i < NUM_WAVES; ++i)
+	{
+		delete pWaves[i];
+	}
+
 }
 
 void WaveTable::InitializeTable(const HWAVEOUT& hWaveOut, QueuePusher* pPlaybackPusher

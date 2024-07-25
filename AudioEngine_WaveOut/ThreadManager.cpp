@@ -13,6 +13,11 @@ ThreadManager::~ThreadManager()
 		ShutdownThreads();
 	}
 
+	for (size_t i = 0; i < CVs.size(); ++i)
+	{
+		delete CVs[i];
+	}
+
 	delete this->poThreadCount;
 }
 
@@ -44,13 +49,34 @@ void ThreadManager::ShutdownOnKeyPress()
 	GetInstance().ShutdownThreads();
 }
 
+CVFlag& ThreadManager::GetManagedCV()
+{
+	ThreadManager* inst = &GetInstance();
+
+	CVFlag* v = new CVFlag();
+	assert(v != nullptr);
+
+	inst->CVs.push_back(v);
+
+	return std::ref(*v);
+}
+
+bool ThreadManager::NotifyAll()
+{
+	for (size_t i = 0; i < CVs.size(); ++i)
+	{
+		CVs[i]->cv.notify_all();
+	}
+
+	return this->poThreadCount->GetCount() == 0;
+}
+
 void ThreadManager::ShutdownThreads()
 {
 	ShouldShutdown.Flag();
-	if (this->poThreadCount->GetCount() != 0)
+	while (this->poThreadCount->GetCount() != 0)
 	{
-		std::unique_lock<std::mutex> m(ThreadCountZero.mtx);
-		ThreadCountZero.cv.wait(m);
+		NotifyAll();
 	}
 }
 

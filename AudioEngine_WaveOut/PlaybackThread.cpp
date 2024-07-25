@@ -1,11 +1,12 @@
 #include "PlaybackThread.h"
 #include "QC_Callback.h"
-
+#include "ThreadManager.h"
 
 PlaybackThread::PlaybackThread(QueuePusher* coordPusher)
 	: QueueThreadBase("--- PLAYBACK ---"),
 	bPlayEmpty(false),
-	cvBeginPlay(),
+	bPlayStarted(false),
+	cvBeginPlay(ThreadManager::GetManagedCV()),
 	prShutdown(),
 	poTable(new WaveTable(this, coordPusher)),
 	WData((DWORD_PTR)this)
@@ -14,11 +15,6 @@ PlaybackThread::PlaybackThread(QueuePusher* coordPusher)
 
 PlaybackThread::~PlaybackThread()
 {
-	if (!prShutdown.IsFlagged())
-	{
-		Shutdown();
-	}
-
 	delete poTable;
 }
 
@@ -80,6 +76,9 @@ WaveTable* PlaybackThread::GetWaveTable()
 
 void PlaybackThread::BeginPlay()
 {
+	bPlayStarted = true;
+	bPlayEmpty = false;
+
 	cvBeginPlay.cv.notify_all();
 	//waveOutRestart(WData.HWaveOut);
 }
@@ -111,14 +110,11 @@ void PlaybackThread::ThreadMain()
 			}
 		}
 	}
-
-	Shutdown();
-
 }
 
 bool PlaybackThread::ShouldShutdown()
 {
-	return ThreadBase::ShouldShutdown() && this->bPlayEmpty == true;
+	return ThreadBase::ShouldShutdown() && (this->bPlayStarted && this->bPlayEmpty);
 }
 
 bool PlaybackThread::InitializeWaveOut()
@@ -214,8 +210,7 @@ void PlaybackThread::Shutdown()
 
 	prShutdown.pr.set_value();
 
-	// unblock waves if waiting for initial write signal
-	cvBeginPlay.cv.notify_all();
+	ThreadBase::Shutdown();
 }
 
 void PlaybackThread::HandleWaveDone()

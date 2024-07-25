@@ -2,6 +2,7 @@
 #include "FileSlow.h"
 #include "Buffer.h"
 #include "CoordinatorThread.h"
+#include "ThreadManager.h"
 
 using namespace Azul;
 
@@ -11,7 +12,7 @@ FileThread::FileThread()
 	NumFilesRead(0),
 	poBuffer(new Buffer(FileThread::BUFFER_SIZE)),
 	prCoordTransfer(),
-	FileToCoordComplete()
+	FileToCoordComplete(ThreadManager::GetManagedCV())
 {
 }
 

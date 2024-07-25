@@ -33,7 +33,7 @@ private:
 	void WaitForPlaySignal();
 	void WaitForStopSignal();
 
-	WaveFill cvFill;
+	WaveFill& cvFill;
 	BeginPlayFlag& cvBeginPlay;
 	std::future<void>& fShutdown;
 	std::future<void> fPlay;

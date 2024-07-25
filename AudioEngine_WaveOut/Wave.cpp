@@ -3,11 +3,12 @@
 #include "QC_Callback.h"
 #include "QC_WaveFill.h"
 #include "QC_WaveStatusUpdate.h"
+#include "ThreadManager.h"
 
 Wave::Wave(const HWAVEOUT& hOutHandle, QueuePusher*& playbackPusher
 	, BeginPlayFlag& beginPlay, std::future<void>& shutdownFlag, int index)
 	: ThreadBase("---- WAVE ----"),
-	cvFill(),
+	cvFill(ThreadManager::GetManagedCV()),
 	cvBeginPlay(beginPlay),
 	fShutdown(shutdownFlag),
 	poBuffer(new Buffer(BUFFER_SIZE)), 

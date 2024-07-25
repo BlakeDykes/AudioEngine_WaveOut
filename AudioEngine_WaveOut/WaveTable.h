@@ -38,7 +38,7 @@ public:
 
 	WaveTable(const WaveTable&) = default;
 	WaveTable& operator=(const WaveTable&) = default;
-	~WaveTable() = default;
+	~WaveTable();
 
 	void InitializeTable(const HWAVEOUT& hWaveOut, QueuePusher* pPlaybackPusher
 		, BeginPlayFlag& beginPlay, std::future<void>& shutdownFlag);

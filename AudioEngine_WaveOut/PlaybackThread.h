@@ -51,7 +51,8 @@ private:
 	void HandleWaveDone();
 
 	bool bPlayEmpty;
-	BeginPlayFlag cvBeginPlay;
+	bool bPlayStarted;
+	BeginPlayFlag& cvBeginPlay;
 	WavesShouldShutdownFlag prShutdown;
 
 	WaveTable* poTable;

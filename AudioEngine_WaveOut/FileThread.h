@@ -28,5 +28,5 @@ private:
 	Buffer* poBuffer;
 
 	std::promise<Buffer*&> prCoordTransfer;
-	FileToCoordCompleteFlag FileToCoordComplete;
+	FileToCoordCompleteFlag& FileToCoordComplete;
 };
